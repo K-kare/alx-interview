@@ -1,10 +1,17 @@
 #!/usr/bin/python3
 """ Module for 0-minoperations"""
 
-def minOperations(n):
+ def minOperations(n):
     """
-    minOperations
-    Gets fewest # of operations needed to result in exactly n H characters
+    Calculate the minimum number of operations required to get exactly n 'H' characters
+    in the file starting with one 'H', using only the 'Copy All' and 'Paste' operations.
+
+    Parameters:
+    n (int): The number of 'H' characters desired in the file.
+
+    Returns:
+    int: The minimum number of operations required to achieve exactly n 'H' characters.
+         If n is impossible to achieve, return 0.
     """
     if (n < 2):
         return 0
