@@ -13,14 +13,14 @@ def minOperations(n):
     operations = 0;
     divisor = 2;
     while divisor <= n:
-        # if n evenly divides by root
+        # if n evenly divides by divisor
         if n % divisor == 0:
-            # total even-divisions by root = total operations
+            # total even-divisions by divisor = total operations
             operations += divisor
             # set n to the remainder
             n = n / divisor
-            # reduce root to find remaining smaller vals that evenly-divide n
+            # reduce divisor to find remaining smaller vals that evenly-divide n
             divisor -= 1
-        # increment root until it evenly-divides n
+        # increment divisor until it evenly-divides n
         divisor += 1
     return operations
