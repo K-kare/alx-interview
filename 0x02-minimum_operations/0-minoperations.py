@@ -1,28 +1,25 @@
 #!/usr/bin/python3
 """ Module for 0-minoperations"""
 
- def minOperations(n):
-    """
-    Calculate the minimum number of operations required to get exactly n 'H' characters
-    in the file starting with one 'H', using only the 'Copy All' and 'Paste' operations.
 
-    Parameters:
-    n (int): The number of 'H' characters desired in the file.
-
-    Returns:
-    int: The minimum number of operations required to achieve exactly n 'H' characters.
-         If n is impossible to achieve, return 0.
+def minOperations(n):
     """
+    minOperations
+    Gets fewest # of operations needed to result in exactly n H characters
+    """
+    # all outputs should be at least 2 char: (min, Copy All => Paste)
     if (n < 2):
         return 0
-    operations = 0
-    divisor = 2 
-    while n > 1:
+    ops, root = 0, 2
+    while root <= n:
         # if n evenly divides by root
-        if n % divisor == 0:
+        if n % root == 0:
             # total even-divisions by root = total operations
-            n = n / divisor
-            operations = operations + divisor
-       else:
-           divisor += 1
-    return operations
+            ops += root
+            # set n to the remainder
+            n = n / root
+            # reduce root to find remaining smaller vals that evenly-divide n
+            root -= 1
+        # increment root until it evenly-divides n
+        root += 1
+    return ops
