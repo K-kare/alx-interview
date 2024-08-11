@@ -10,7 +10,7 @@ def minOperations(n):
     # all outputs should be at least 2 char: (min, Copy All => Paste)
     if (n < 2):
         return 0
-    operation = 0;
+    operations = 0;
     divisor = 2;
     while divisor <= n:
         # if n evenly divides by root
