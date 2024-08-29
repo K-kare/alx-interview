@@ -38,7 +38,4 @@ def queenssolve(n):
             i += 1
         print(k)
         k = []
-        i = 0
-
-
-queenssolve(n) 
+        i = 0 
